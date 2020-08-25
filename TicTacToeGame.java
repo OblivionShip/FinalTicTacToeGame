@@ -1,30 +1,16 @@
 package games.board;
-import games.board.Board;
-import games.board.Cell;
-import games.board.Mark;
-import games.board.Outcome;
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
-import javax.swing.AbstractAction;
+import java.awt.event.ActionEvent;
 
 public class TicTacToeGame extends JFrame {
-	public static void main(String[] args) {
-		SwingUtilities.invokeLater( new Runnable () {
-	           public void run() { new TicTacToeGame();}
-	    });
-		}
 	
 	private static Board gb;
 	private static int turn;
 		private void takeTurn(Cell c) {
 			Mark curMark = (turn++ % 2 == 0)? Mark.NOUGHT: Mark.CROSS;
 			gb.setCell(curMark,c.getRow(),c.getColumn());
-			
+
 		}
 		
 		private TicTacToeGame() {
@@ -40,80 +26,97 @@ public class TicTacToeGame extends JFrame {
 				this.setSize(300, 300);
 				this.setVisible(true);
 		}
-		
-		static Outcome getOutcome() {
+		public static void main(String[] args) {
+			 int outcome;
+			SwingUtilities.invokeLater( new Runnable () {
+		           public void run() { new TicTacToeGame();}
+		    });
+			switch (outcome) {
+			case Outcome.PLAYER1_WIN:
+				System.out.println("O wins!");
+				break;
+			case Outcome.PLAYER2_WIN:
+				System.out.println("X wins!");
+				break;
+			case Outcome.TIE:
+				System.out.println("Tie.");
+				break;
+			}
+			}
+					
+		static Outcome getOutcome(int row, int column) {
 			//ROWS//
 			if((gb.getCell(0,0).getContent() == Mark.NOUGHT) 
 					&& (gb.getCell(0,1).getContent() == Mark.NOUGHT) 
 					&& (gb.getCell(0,2).getContent() == Mark.NOUGHT)) 
 						{return Outcome.PLAYER1_WIN;}
-			if((gb.getCell(1,0).getContent() == Mark.NOUGHT) 
-					&& (gb.getCell(1,1).getContent() == Mark.NOUGHT) 
-					&& (gb.getCell(1,2).getContent() == Mark.NOUGHT)) 
+				if((gb.getCell(1,0).getContent() == Mark.NOUGHT) 
+					&&  (gb.getCell(1,1).getContent() == Mark.NOUGHT) 
+					&&  (gb.getCell(1,2).getContent() == Mark.NOUGHT))
 						{return Outcome.PLAYER1_WIN;}
 				if((gb.getCell(2,0).getContent() == Mark.NOUGHT) 
-					&& (gb.getCell(2,1).getContent() == Mark.NOUGHT) 
-					&& (gb.getCell(2,2).getContent() == Mark.NOUGHT)) 
+					&&  (gb.getCell(2,1).getContent() == Mark.NOUGHT) 
+					&&  (gb.getCell(2,2).getContent() == Mark.NOUGHT)) 
 						{return Outcome.PLAYER1_WIN;}
-			
+
 				if((gb.getCell(0,0).getContent() == Mark.CROSS) 
-						&& (gb.getCell(0,1).getContent() == Mark.CROSS) 
+						&& (gb.getCell(0,1).getContent() == Mark.CROSS)
 						&& (gb.getCell(0,2).getContent() == Mark.CROSS)) 
 							{return Outcome.PLAYER2_WIN;}
-					if((gb.getCell(1,0).getContent() == Mark.CROSS) 
-						&& (gb.getCell(1,1).getContent() == Mark.CROSS) 
-						&& (gb.getCell(1,2).getContent() == Mark.CROSS)) 
+					if((gb.getCell(1,0).getContent() == Mark.CROSS)
+						&&  (gb.getCell(1,1).getContent() == Mark.CROSS) 
+						&&  (gb.getCell(1,2).getContent() == Mark.CROSS))
 							{return Outcome.PLAYER2_WIN;}
 					if((gb.getCell(2,0).getContent() == Mark.CROSS) 
-						&& (gb.getCell(2,1).getContent() == Mark.CROSS) 
-						&& (gb.getCell(2,2).getContent() == Mark.CROSS)) 
+						&&  (gb.getCell(2,1).getContent() == Mark.CROSS) 
+						&&  (gb.getCell(2,2).getContent() == Mark.CROSS)) 
 							{return Outcome.PLAYER2_WIN;}
 			
-					//COLUMNS//
+			//COLUMNS//
 					if((gb.getCell(0,0).getContent() == Mark.NOUGHT) 
 							&& (gb.getCell(1,0).getContent() == Mark.NOUGHT) 
 							&& (gb.getCell(2,0).getContent() == Mark.NOUGHT)) 
 								{return Outcome.PLAYER1_WIN;}
 						if((gb.getCell(0,1).getContent() == Mark.NOUGHT) 
-							&& (gb.getCell(1,1).getContent() == Mark.NOUGHT) 
-							&& (gb.getCell(2,1).getContent() == Mark.NOUGHT)) 
+							&&  (gb.getCell(1,1).getContent() == Mark.NOUGHT) 
+							&&  (gb.getCell(2,1).getContent() == Mark.NOUGHT))
 								{return Outcome.PLAYER1_WIN;}
 						if((gb.getCell(0,2).getContent() == Mark.NOUGHT) 
-							&& (gb.getCell(1,2).getContent() == Mark.NOUGHT) 
-							&& (gb.getCell(2,2).getContent() == Mark.NOUGHT)) 
+							&&  (gb.getCell(1,2).getContent() == Mark.NOUGHT) 
+							&&  (gb.getCell(2,2).getContent() == Mark.NOUGHT)) 
 								{return Outcome.PLAYER1_WIN;}
 
 						if((gb.getCell(0,0).getContent() == Mark.CROSS) 
-								&& (gb.getCell(1,0).getContent() == Mark.CROSS) 
-								&& (gb.getCell(2,0).getContent() == Mark.CROSS)) 
-									{return Outcome.PLAYER2_WIN;}
-							if((gb.getCell(0,1).getContent() == Mark.CROSS) 
-								&& (gb.getCell(1,1).getContent() == Mark.CROSS) 
-								&& (gb.getCell(2,1).getContent() == Mark.CROSS)) 
-									{return Outcome.PLAYER2_WIN;}
-							if((gb.getCell(0,2).getContent() == Mark. CROSS) 
-								&& (gb.getCell(1,2).getContent() == Mark.CROSS) 
-								&& (gb.getCell(2,2).getContent() == Mark.CROSS)) 
-									{return Outcome.PLAYER2_WIN;}
-							
-							//DIAGONALS//
-							if((gb.getCell(0,0).getContent() == Mark.NOUGHT) 
-									&& (gb.getCell(1,1).getContent() == Mark.NOUGHT) 
-									&& (gb.getCell(2,2).getContent() == Mark.NOUGHT)) 
-										{return Outcome.PLAYER1_WIN;}
+							&& (gb.getCell(1,0).getContent() == Mark.CROSS) 
+							&& (gb.getCell(2,0).getContent() == Mark.CROSS)) 
+								{return Outcome.PLAYER2_WIN;}
+						if((gb.getCell(0,1).getContent() == Mark.CROSS) 
+							&&  (gb.getCell(1,1).getContent() == Mark.CROSS) 
+							&&  (gb.getCell(2,1).getContent() == Mark.CROSS))
+								{return Outcome.PLAYER2_WIN;}
+						if((gb.getCell(0,2).getContent() == Mark.CROSS) 
+							&&  (gb.getCell(1,2).getContent() == Mark.CROSS) 
+							&&  (gb.getCell(2,2).getContent() == Mark.CROSS)) 
+								{return Outcome.PLAYER2_WIN;}
+
+			//DIAGONALS//
+						if((gb.getCell(0,0).getContent() == Mark.NOUGHT) 
+								&& (gb.getCell(1,1).getContent() == Mark.NOUGHT) 
+								&& (gb.getCell(2,2).getContent() == Mark.NOUGHT)) 
+									{return Outcome.PLAYER1_WIN;}
 							if((gb.getCell(0,2).getContent() == Mark.NOUGHT) 
-									&& (gb.getCell(1,1).getContent() == Mark.NOUGHT) 
-									&& (gb.getCell(2,0).getContent() == Mark.NOUGHT)) 
-										{return Outcome.PLAYER1_WIN;}
+								&& (gb.getCell(1,1).getContent() == Mark.NOUGHT) 
+								&& (gb.getCell(2,0).getContent() == Mark.NOUGHT)) 
+									{return Outcome.PLAYER1_WIN;}
 
 							if((gb.getCell(0,0).getContent() == Mark.CROSS) 
-									&& (gb.getCell(1,1).getContent() == Mark.CROSS) 
-									&& (gb.getCell(2,2).getContent() == Mark.CROSS)) 
-										{return Outcome.PLAYER2_WIN;}
+								&& (gb.getCell(1,1).getContent() == Mark.CROSS) 
+								&& (gb.getCell(2,2).getContent() == Mark.CROSS)) 
+									{return Outcome.PLAYER2_WIN;}
 							if((gb.getCell(0,2).getContent() == Mark.CROSS) 
-									&& (gb.getCell(1,1).getContent() == Mark.CROSS) 
-									&& (gb.getCell(2,0).getContent() == Mark.CROSS)) 
-										{return Outcome.PLAYER2_WIN;}
+								&& (gb.getCell(1,1).getContent() == Mark.CROSS) 
+								&& (gb.getCell(2,0).getContent() == Mark.CROSS)) 
+									{return Outcome.PLAYER2_WIN;}
 
 							//TIES//
 							if((gb.getCell(2,2).getContent() == Mark.NOUGHT) 
