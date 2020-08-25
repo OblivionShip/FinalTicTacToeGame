@@ -49,7 +49,7 @@ public class TicTacToeGame extends JFrame {
 						{return Outcome.PLAYER1_WIN;}
 			if((gb.getCell(1,0).getContent() == Mark.NOUGHT) 
 					&& (gb.getCell(1,1).getContent() == Mark.NOUGHT) 
-					&& (gb.getCells(1,2).getContent() == Mark.NOUGHT)) 
+					&& (gb.getCell(1,2).getContent() == Mark.NOUGHT)) 
 						{return Outcome.PLAYER1_WIN;}
 				if((gb.getCell(2,0).getContent() == Mark.NOUGHT) 
 					&& (gb.getCell(2,1).getContent() == Mark.NOUGHT) 
@@ -122,31 +122,31 @@ public class TicTacToeGame extends JFrame {
 									&& (gb.getCell(0,1).getContent() == Mark. NOUGHT)
 									&& (gb.getCell(2,0).getContent() == Mark. NOUGHT)) 
 										{return Outcome.TIE;}
-								if ((gb.getCell(0,0).getContent() == Mark.NOUGHT )
+							if ((gb.getCell(0,0).getContent() == Mark.NOUGHT )
 									&& (gb.getCell(1,0).getContent() == Mark.NOUGHT)
 									&& (gb.getCell(1,1).getContent() == Mark.NOUGHT) 
 									&& (gb.getCell(2,1).getContent() == Mark.NOUGHT)
 									&& (gb.getCell(0,2).getContent() == Mark.NOUGHT))
 										{return Outcome.TIE;}//**#2
-								if ((gb.getCell(0,2).getContent() == Mark.NOUGHT) 
+							if ((gb.getCell(0,2).getContent() == Mark.NOUGHT) 
 									&& (gb.getCell(1,2).getContent() == Mark.NOUGHT)
 									&& (gb.getCell(1,1).getContent() == Mark.NOUGHT)
 									&& (gb.getCell(2,1).getContent() == Mark.NOUGHT)
 									&& (gb.getCell(0,0).getContent() == Mark.NOUGHT)) 
 										{return Outcome.TIE;}//**#3
-								if ((gb.getCell(2,0).getContent() == Mark.NOUGHT)
+							if ((gb.getCell(2,0).getContent() == Mark.NOUGHT)
 									&& (gb.getCell(2,1).getContent() == Mark.NOUGHT)
 									&& (gb.getCell(1,1).getContent() == Mark.NOUGHT)
 									&& (gb.getCell(1,2) .getContent() == Mark.NOUGHT) 
 									&& (gb.getCell(0,0) .getContent() == Mark.NOUGHT))
 										{return Outcome.TIE;}//**#4
-								if ((gb.getCell(0,0).getContent() == Mark.NOUGHT)
+							if ((gb.getCell(0,0).getContent() == Mark.NOUGHT)
 									&& (gb.getCell(0,1).getContent() == Mark.NOUGHT)
 									&& (gb.getCell(1,1).getContent() == Mark.NOUGHT)
 									&& (gb.getCell(1,2).getContent() == Mark.NOUGHT)
 									&& (gb.getCell(2,0).getContent() == Mark.NOUGHT))
 										{return Outcome.TIE;}//**#5
-								if ((gb.getCell(2,0) .getContent() == Mark.NOUGHT)
+							if ((gb.getCell(2,0) .getContent() == Mark.NOUGHT)
 									&& (gb.getCell(1,0) .getContent() == Mark.NOUGHT)
 									&& (gb.getCell(1,1) .getContent() == Mark.NOUGHT)
 									&& (gb.getCell(0,1).getContent() == Mark.NOUGHT)
@@ -158,7 +158,7 @@ public class TicTacToeGame extends JFrame {
 									&& (gb.getCell(1,0).getContent() == Mark.NOUGHT)
 									&& (gb.getCell(2,2) .getContent() == Mark.NOUGHT))
 										{return Outcome.TIE;} //**#7
-								if ((gb.getCell(2,2) .getContent() == Mark.NOUGHT)
+							if ((gb.getCell(2,2) .getContent() == Mark.NOUGHT)
 									&& (gb.getCell(2,1) .getContent() == Mark.NOUGHT)
 									&& (gb.getCell(1,1) .getContent() == Mark.NOUGHT)
 									&& (gb.getCell(1,0).getContent() == Mark.NOUGHT)
@@ -170,13 +170,13 @@ public class TicTacToeGame extends JFrame {
 									&& (gb.getCell(2,1).getContent() == Mark.NOUGHT)
 									&& (gb.getCell(1,0) .getContent() == Mark.NOUGHT))
 										{return Outcome.TIE;}//**#9
-								if((gb.getCell(0,0) .getContent() == Mark.NOUGHT)
+							if((gb.getCell(0,0) .getContent() == Mark.NOUGHT)
 									&& (gb.getCell(1,0) .getContent() == Mark.NOUGHT)
 									&& (gb.getCell(0,1).getContent() == Mark.NOUGHT)
 									&& (gb.getCell(2,1).getContent() == Mark.NOUGHT)
 									&& (gb.getCell(1,2) .getContent() == Mark.NOUGHT))
 										{return Outcome.TIE;}//**#10
-								if((gb.getCell(2,0) .getContent() == Mark.NOUGHT)
+							if((gb.getCell(2,0) .getContent() == Mark.NOUGHT)
 									&& (gb.getCell(1,0) .getContent() == Mark.NOUGHT)
 									&& (gb.getCell(2,1) .getContent() == Mark.NOUGHT) 
 									&& (gb.getCell(0,1) .getContent() == Mark.NOUGHT)
@@ -230,13 +230,13 @@ public class TicTacToeGame extends JFrame {
 									&& (gb.getCell(0,1).getContent() == Mark.NOUGHT)
 									&& (gb.getCell(0,2) .getContent() == Mark.NOUGHT))
 										{return Outcome.TIE;}//**#19
-								if ((gb.getCell(2,0) .getContent() == Mark.NOUGHT)
+							if ((gb.getCell(2,0) .getContent() == Mark.NOUGHT)
 									&& (gb.getCell(2,1) .getContent() == Mark.NOUGHT)
 									&& (gb.getCell(1,0) .getContent() == Mark.NOUGHT)
 									&& (gb.getCell(1,2).getContent() == Mark.NOUGHT)
 									&& (gb.getCell(2,2) .getContent() == Mark.NOUGHT))
 										{return Outcome.TIE;}//**#20
-								if ((gb.getCell(2,0) .getContent() == Mark.NOUGHT)
+							if ((gb.getCell(2,0) .getContent() == Mark.NOUGHT)
 									&& (gb.getCell(1,0) .getContent() == Mark.NOUGHT)
 									&& (gb.getCell(2,1) .getContent() == Mark.NOUGHT)
 									&& (gb.getCell(0,2).getContent() == Mark.NOUGHT)
@@ -296,7 +296,7 @@ public class TicTacToeGame extends JFrame {
 									&& (gb.getCell(1,2).getContent() == Mark.NOUGHT)
 									&& (gb.getCell(2,1) .getContent() == Mark.NOUGHT))
 										{return Outcome.TIE;}//**#30
-								
-												return Outcome.CONTINUE;
-   }
+
+			return Outcome.CONTINUE;
+		}
 }
