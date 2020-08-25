@@ -49,7 +49,7 @@ public class TicTacToeGame extends JFrame {
 						{return Outcome.PLAYER1_WIN;}
 			if((gb.getCell(1,0).getContent() == Mark.NOUGHT) 
 					&& (gb.getCell(1,1).getContent() == Mark.NOUGHT) 
-					&& (gb.getCells()[1][2].getContent() == Mark.NOUGHT)) 
+					&& (gb.getCells(1,2).getContent() == Mark.NOUGHT)) 
 						{return Outcome.PLAYER1_WIN;}
 				if((gb.getCell(2,0).getContent() == Mark.NOUGHT) 
 					&& (gb.getCell(2,1).getContent() == Mark.NOUGHT) 
